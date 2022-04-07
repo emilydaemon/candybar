@@ -9,7 +9,7 @@ add the following to your ~/.xinitrc:
 while true; do
 	xsetroot -name "$(candybar)"
 	sleep 2
-done
+done &
 ```
 ### usage with tmux
 add the following to your ~/.tmux.conf:
