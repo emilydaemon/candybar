@@ -18,3 +18,12 @@ set -g status-interval 2
 set -g status-right-length 100
 set -g status-right "#(candybar)"
 ```
+### usage with zsh
+add the following to your ~/.zshrc:
+```zsh
+precmd() {
+	psvar[1]="$(candybar)"
+}
+export CSI=$'\e'"["
+export PROMPT="${CSI}s${CSI}1;$((LINES-1))r${CSI}$LINES;1f%S%1v%s${CSI}K${CSI}u${PROMPT}"
+```
