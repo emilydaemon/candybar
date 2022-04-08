@@ -3,4 +3,4 @@
 
 export bar=" "
 . "$HOME/.config/candybar/config.sh"
-printf "$bar\n"
+echo "$bar"
