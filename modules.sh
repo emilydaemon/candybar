@@ -71,3 +71,8 @@ module_download() {
 	down="$(cat /sys/class/net/${netdevice}/statistics/tx_bytes | awk '{$1=$1/1024000; print $1"B";}' | tail -n 1)"
 	export bar="${bar}${1}${down}${2}"
 }
+
+module_mail() {
+	mailoutput="$(ls ${maildir} | wc -l)"
+	[ "$mailoutput" = "0" ] || export bar="${bar}${1}${mailoutput}${2}"
+}

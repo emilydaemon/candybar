@@ -7,6 +7,10 @@
 # network device, needed for upload and download modules
 export netdevice=""
 
+# mail directory, needed for mail module
+export maildir=""
+
+# module list. uncomment to enable.
 # module list. uncomment to enable.
 # re-arrange to change order.
 # module name		icon/prefix	suffix
@@ -25,4 +29,5 @@ export netdevice=""
 #module_todo		"TODO: "	" | "
 #module_upload		"Up: "		" | "
 #module_download	"Down: "	" | "
+#module_mail		"Mail: "	" | "
 module_date		"Date: "	""
