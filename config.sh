@@ -20,5 +20,4 @@
 #module_cpu		"CPU: "		" | "
 #module_battery		"Battery: "	" | "
 #module_todo		"TODO: "	" | "
-#module_gmail		"Unread: "	" | "
 module_date		"Date: "	""

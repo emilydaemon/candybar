@@ -59,9 +59,3 @@ module_todo() {
 	todooutput="$(head -n 1 ~/.todo.txt)"
 	[ "$todooutput" = "" ] || export bar="${bar}${1}${todooutput}${2}"
 }
-
-module_gmail() {
-	export user="youruser"
-	export pass="yourpass"
-	export bar="${bar}${1}$(echo 'user = ${USER}@gmail.com:${PASS}' | curl -sf -K- -X 'STATUS INBOX (UNSEEN)' imaps://imap.gmail.com/INBOX | tr -d -c '[:digit:]')%${2}"
-}
