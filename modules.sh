@@ -45,3 +45,8 @@ module_du() {
 module_ip() {
 	export bar="${bar}${1}$(ip -f inet a | awk '/inet / { print $2 }' | tail -n 1 | sed 's/\/.*//')${2}"
 }
+
+module_cpu() {
+	# https://github.com/speediegamer/xshbar-plugins/blob/main/cpustatus.plugin
+	export bar="${bar}${1}$(top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100 - $1"%"}')${2}"
+}

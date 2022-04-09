@@ -17,4 +17,5 @@
 #module_weather		"Weather: "	" | "
 #module_du		"Disk Usage: "	" | "
 #module_ip		"IP: "		" | "
+#module_cpu		"CPU: "		" | "
 module_date		"Date: "	""
