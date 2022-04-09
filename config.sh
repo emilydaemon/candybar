@@ -20,4 +20,6 @@
 #module_cpu		"CPU: "		" | "
 #module_battery		"Battery: "	" | "
 #module_todo		"TODO: "	" | "
+#module_upload		"Up: "		" | "
+#module_download	"Down: "	" | "
 module_date		"Date: "	""

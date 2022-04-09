@@ -59,3 +59,17 @@ module_todo() {
 	todooutput="$(head -n 1 ~/.todo.txt)"
 	[ "$todooutput" = "" ] || export bar="${bar}${1}${todooutput}${2}"
 }
+
+export netdevice=""
+
+module_upload() {
+	# https://github.com/speediegamer/xshbar-plugins/blob/main/netstat.plugin
+	up="$(cat /sys/class/net/${netdevice}/statistics/rx_bytes | awk '{$1=$1/1024000; print $1"B";}' | tail -n 1)"
+	export bar="${bar}${1}${up}${2}"
+}
+
+module_download() {
+	# https://github.com/speediegamer/xshbar-plugins/blob/main/netstat.plugin
+	down="$(cat /sys/class/net/${netdevice}/statistics/tx_bytes | awk '{$1=$1/1024000; print $1"B";}' | tail -n 1)"
+	export bar="${bar}${1}${down}${2}"
+}
