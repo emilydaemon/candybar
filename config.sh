@@ -15,4 +15,5 @@
 #module_kernel		"Kernel: "	" | "
 #module_loadavg		"Load Avg.: "	" | "
 #module_weather		"Weather: "	" | "
+#module_du		"Disk Usage: "	" | "
 module_date		"Date: "	""

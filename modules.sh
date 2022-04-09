@@ -37,3 +37,7 @@ module_loadavg() {
 module_weather() {
 	export bar="${bar}${1}$(curl -s 'wttr.in/?format=1' | sed 's/.* //')${2}"
 }
+
+module_du() {
+	export bar="${bar}${1}$(df -T / | awk '{if (NR!=1) {print $6}}')${2}"
+}
