@@ -50,3 +50,7 @@ module_cpu() {
 	# https://github.com/speediegamer/xshbar-plugins/blob/main/cpustatus.plugin
 	export bar="${bar}${1}$(top -bn1 | grep 'Cpu(s)' | sed 's/.*, *\([0-9.]*\)%* id.*/\1/' | awk '{print 100 - $1"%"}')${2}"
 }
+
+module_battery() {
+	export bar="${bar}${1}$(cat /sys/class/power_supply/BAT0/capacity)%${2}"
+}

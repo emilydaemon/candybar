@@ -18,4 +18,5 @@
 #module_du		"Disk Usage: "	" | "
 #module_ip		"IP: "		" | "
 #module_cpu		"CPU: "		" | "
+#module_battery		"Battery: "	" | "
 module_date		"Date: "	""
