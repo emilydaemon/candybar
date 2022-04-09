@@ -54,3 +54,8 @@ module_cpu() {
 module_battery() {
 	export bar="${bar}${1}$(cat /sys/class/power_supply/BAT0/capacity)%${2}"
 }
+
+module_todo() {
+	todooutput="$(head -n 1 ~/.todo.txt)"
+	[ "$todooutput" = "" ] || export bar="${bar}${1}${todooutput}${2}"
+}
