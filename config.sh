@@ -4,6 +4,9 @@
 # modules location
 . "$HOME/.config/candybar/modules.sh"
 
+# network device, needed for upload and download modules
+export netdevice=""
+
 # module list. uncomment to enable.
 # re-arrange to change order.
 # module name		icon/prefix	suffix
