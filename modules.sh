@@ -41,3 +41,7 @@ module_weather() {
 module_du() {
 	export bar="${bar}${1}$(df -T / | awk '{if (NR!=1) {print $6}}')${2}"
 }
+
+module_ip() {
+	export bar="${bar}${1}$(ip -f inet a | awk '/inet / { print $2 }' | tail -n 1 | sed 's/\/.*//')${2}"
+}

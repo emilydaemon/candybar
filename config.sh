@@ -16,4 +16,5 @@
 #module_loadavg		"Load Avg.: "	" | "
 #module_weather		"Weather: "	" | "
 #module_du		"Disk Usage: "	" | "
+#module_ip		"IP: "		" | "
 module_date		"Date: "	""
