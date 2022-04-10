@@ -76,3 +76,7 @@ module_mail() {
 	mailoutput="$(ls ${maildir} | wc -l)"
 	[ "$mailoutput" = "0" ] || export bar="${bar}${1}${mailoutput}${2}"
 }
+
+module_dfmpeg() {
+	[ -f "/tmp/dfmpeg-recording" ] || export bar="${bar}${1}${mailoutput}${2}"
+}
