@@ -32,3 +32,8 @@ precmd() {
 export CSI=$'\e'"["
 export PROMPT="${CSI}s${CSI}1;$((LINES-1))r${CSI}$LINES;1f%S%1v%s${CSI}K${CSI}u${PROMPT}"
 ```
+
+## troubleshooting
+1) It doesn't show the volume percent.
+	+ Make sure to un-comment one of these 2 lines from modules.sh
+	![example](https://user-images.githubusercontent.com/88589756/162611795-75e8ccdd-e9a9-4994-98ea-dd57e26d1121.png)
