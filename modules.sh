@@ -23,11 +23,7 @@ module_user() {
 }
 
 module_vol() {
-	# Un-comment this if you use ALSA
-	#export bar="${bar}${1}$(amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }')${2}"
-
-	# Un-comment this if you use PulseAudio
-	#export bar="${bar}${1}$(pamixer --get-volume)${2}"
+	export bar="${bar}${1}$(if command -v pamixer > NULL; then pamixer --get-volume; else amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }'; fi)${2}"
 }
 
 module_kernel() {
