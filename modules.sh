@@ -22,8 +22,8 @@ module_user() {
 	export bar="${bar}${1}$(whoami)@$(cat /proc/sys/kernel/hostname)${2}"
 }
 
-module_alsa() {
-	export bar="${bar}${1}$(amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }')${2}"
+module_vol() {
+	export bar="${bar}${1}$(if command -v pamixer > NULL; then pamixer --get-volume; else amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }'; fi)${2}"
 }
 
 module_kernel() {
