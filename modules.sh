@@ -78,5 +78,5 @@ module_mail() {
 }
 
 module_dfmpeg() {
-	[ -f "/tmp/dfmpeg-recording" ] || export bar="${bar}${1}${mailoutput}${2}"
+	[ -f "/tmp/dfmpeg-recording" ] && export bar="${bar}${1}${2}"
 }
