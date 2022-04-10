@@ -23,7 +23,8 @@ module_user() {
 }
 
 module_vol() {
-	export bar="${bar}${1}$(if command -v pamixer > NULL; then pamixer --get-volume; else amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }'; fi)${2}"
+	[ $(which amixer) ] && export bar="${bar}${1}$(amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }')${2}"
+	[ $(which pamixer) ] && export bar="${bar}${1}$(pamixer --get-volume)${2}"
 }
 
 module_kernel() {
