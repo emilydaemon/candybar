@@ -32,3 +32,4 @@ precmd() {
 export CSI=$'\e'"["
 export PROMPT="${CSI}s${CSI}1;$((LINES-1))r${CSI}$LINES;1f%S%1v%s${CSI}K${CSI}u${PROMPT}"
 ```
+
