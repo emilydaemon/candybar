@@ -26,6 +26,10 @@ module_vol() {
 	export bar="${bar}${1}$(if command -v pamixer > NULL; then pamixer --get-volume; else amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }'; fi)${2}"
 }
 
+module_mic() {
+	export bar="${bar}${1}$(if pamixer --source 1 --get-mute | grep -q 'true'; then echo "OFF"; else echo "ON"; fi)${2}"
+}
+
 module_kernel() {
 	export bar="${bar}${1}$(sed "s/version // ; s/ (.*//" /proc/version)${2}"
 }
