@@ -22,11 +22,15 @@ module_user() {
 	export bar="${bar}${1}$(whoami)@$(cat /proc/sys/kernel/hostname)${2}"
 }
 
-module_vol() {
-	export bar="${bar}${1}$(if command -v pamixer > NULL; then pamixer --get-volume; else amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }'; fi)${2}"
+module_vol_pa() {
+	export bar="${bar}${1}$(pamixer --get-volume)${2}"
 }
 
-module_mic() {
+module_vol_alsa() {
+	export bar="${bar}${1}$(amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }')${2}"
+}
+
+module_mic_pa() {
 	export bar="${bar}${1}$(if pamixer --source 1 --get-mute | grep -q 'true'; then echo "OFF"; else echo "ON"; fi)${2}"
 }
 
