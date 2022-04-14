@@ -27,7 +27,7 @@ module_vol_pa() {
 }
 
 module_vol_alsa() {
-	export bar="${bar}${1}$(amixer sget Master | awk -F'[][]' '/Mono:/ { print $2 }')${2}"
+	export bar="${bar}${1}$(echo "`amixer sget Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/"`%")${2}"  #Thanks speedie for the command
 }
 
 module_mic_pa() {
