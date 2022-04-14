@@ -23,7 +23,7 @@ module_user() {
 }
 
 module_vol_pa() {
-	export bar="${bar}${1}$(pamixer --get-volume)${2}"
+	export bar="${bar}${1}$(echo "`pamixer --get-volume`%")${2}"
 }
 
 module_vol_alsa() {
@@ -60,7 +60,7 @@ module_cpu() {
 }
 
 module_battery() {
-	export bar="${bar}${1}$(cat /sys/class/power_supply/BAT0/capacity)%${2}"
+	export bar="${bar}${1}$(if cat /sys/class/power_supply/BAT0/uevent | grep -q "POWER_SUPPLY_STATUS=Charging";then echo "`cat /sys/class/power_supply/BAT0/capacity`";else echo "`cat /sys/class/power_supply/BAT0/capacity`";fi)%${2}"
 }
 
 module_todo() {
