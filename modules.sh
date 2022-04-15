@@ -34,6 +34,10 @@ module_mic_pa() {
 	export bar="${bar}${1}$(if pamixer --source 1 --get-mute | grep -q 'true'; then echo "OFF"; else echo "ON"; fi)${2}"
 }
 
+module_mic_alsa() {
+	export bar="${bar}${1}$(if amixer sget Capture | grep -q 'off'; then echo "OFF"; else echo "ON"; fi)${2}"
+}
+
 module_kernel() {
 	export bar="${bar}${1}$(sed "s/version // ; s/ (.*//" /proc/version)${2}"
 }
