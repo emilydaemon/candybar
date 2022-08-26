@@ -1,32 +1,11 @@
-# candybar
-a stupidly simple modular statusbar
+# Give Up GitHub
 
-[preview](https://i.imgur.com/yVBwCJb.png)
+This project has given up GitHub.  ([See Software Freedom Conservancy's *Give Up  GitHub* site for details](https://GiveUpGitHub.org).)
 
-## usage
-**candybar** only outputs the text that should be shown on the bar, which makes it useable on different applications.
-### usage with dwm
-add the following to your ~/.xinitrc:
-```sh
-while true; do
-	xsetroot -name "$(candybar)"
-	sleep 2
-done &
-```
-### usage with tmux
-add the following to your ~/.tmux.conf:
-```tmux
-set -g status-interval 2
-set -g status-right-length 100
-set -g status-right "#(candybar)"
-```
-### usage with zsh
-add the following to your ~/.zshrc:
-```zsh
-precmd() {
-	psvar[1]="$(candybar)"
-}
-export CSI=$'\e'"["
-export PROMPT="${CSI}s${CSI}1;$((LINES-1))r${CSI}$LINES;1f%S%1v%s${CSI}K${CSI}u${PROMPT}"
-```
+You can now find this project at [Codeberg](https://codeberg.org/jornmann/candybar) instead.
 
+Any use of this project's code by GitHub Copilot, past or present, is done without our permission.  We do not consent to GitHub's use of this project's code in Copilot.
+
+Join us; you can [give up GitHub](https://GiveUpGitHub.org) too!
+
+![Logo of the GiveUpGitHub campaign](https://sfconservancy.org/img/GiveUpGitHub.png)
